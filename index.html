@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      .nav-item {
+        flex: 1;
+        text-align: center;
+      }
+      .result {
+        border: 1px solid green;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 20px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#b1">Bài 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b2">Bài 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b3">Bài 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b4">Bài 4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#b5">Bài 5</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content mt-5">
+        <div class="tab-pane container active" id="b1">
+          <div class="container">
+            <h2>BÀI 1: 📚 Xuất 3 số theo thứ tự tăng dần</h2>
+            <form action="#">
+              <input
+                id="number1"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 1"
+              />
+              <input
+                id="number2"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 2"
+              />
+              <input
+                id="number3"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 3"
+              />
+              <button
+                class="btn btn-primary mt-3"
+                onclick="sortAscendingNumber()"
+              >
+                Sắp xếp
+              </button>
+              <div class="result result-bt1 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b2">
+          <div class="container">
+            <h2>BÀI 2: 👋 Chương trình "Chào hỏi"</h2>
+            <form action="#">
+              <select class="form-select" id="chooseMember">
+                <option value="default" selected>Chọn thành viên</option>
+                <option value="Bố">Bố</option>
+                <option value="Mẹ">Mẹ</option>
+                <option value="Anh trai">Anh trai</option>
+                <option value="Em gái">Em gái</option>
+              </select>
+              <button class="btn btn-primary mt-3" onclick="sayHelloToMember()">
+                Gửi lời chào
+              </button>
+              <div class="result result-bt2 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b3">
+          <div class="container">
+            <h2>BÀI 3: 🧮 Đếm số chẵn lẻ</h2>
+            <form action="#">
+              <input
+                id="num1"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 1"
+              />
+              <input
+                id="num2"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 2"
+              />
+              <input
+                id="num3"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập số thứ 3"
+              />
+              <button class="btn btn-primary mt-3" onclick="countNumber()">
+                Tính
+              </button>
+              <div class="result result-bt3 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b4">
+          <div class="container">
+            <h2>BÀI 4: 🔮 Đoán hình tam giác</h2>
+            <form action="#">
+              <input
+                id="length1"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập độ dài cạnh 1"
+              />
+              <input
+                id="length2"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập độ dài cạnh 2"
+              />
+              <input
+                id="length3"
+                type="number"
+                class="form-control mt-3"
+                placeholder="nhập độ dài cạnh 3"
+              />
+              <button class="btn btn-primary mt-3" onclick="identifyTriangle()">
+                Tính
+              </button>
+              <div class="result result-bt4 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane container fade" id="b5">
+          <div class="container">
+            <h2>BÀI 5: 📅 Tính ngày tháng năm</h2>
+            <form action="#">
+              <input
+                id="day"
+                type="date"
+                class="form-control mt-3"
+                placeholder="nhập ngày"
+              />
+              <button
+                class="btn btn-primary mt-3"
+                onclick="previousDays(splitValue)"
+              >
+                Xem ngày trước
+              </button>
+              <button class="btn btn-primary mt-3" onclick="nextDays()">
+                Xem ngày sau
+              </button>
+              <div class="result result-bt5 mt-3">
+                👉<span class="m-1"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
